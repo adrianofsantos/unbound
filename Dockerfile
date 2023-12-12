@@ -10,7 +10,6 @@ RUN apt update && apt install -y build-essential libssl-dev libexpat1-dev flex b
 WORKDIR /opt/unbound-${UNBOUND_VERSION}
 RUN ./configure && make && make install && useradd unbound
 ADD pi-hole.conf /usr/local/etc/unbound/unbound.conf
-RUN wget https://www.internic.net/domain/named.root -qO- | tee /usr/local/etc/unbound/root.hints 
 ADD https://www.internic.net/domain/named.root  /usr/local/etc/unbound/root.hints 
 
 WORKDIR /opt/
