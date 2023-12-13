@@ -16,4 +16,4 @@ WORKDIR /opt/
 RUN rm -rf /opt/unbound-$UNBOUND_VERSION*
 
 WORKDIR /usr/local/etc/unbound
-CMD [ "unbound", "-d", "-vv", "-c", "unbound.conf" ]
+CMD [ "unbound", "-d", "-vvvv", "-c", "unbound.conf" ]
